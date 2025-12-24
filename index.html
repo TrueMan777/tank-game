@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tank Battle Game</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🚗</text></svg>" />
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+            background-color: #222;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        #gameContainer {
+            border: 2px solid #555;
+            background-color: #000;
+            margin: 5px auto;
+            position: relative;
+            width: 800px;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #gameInfo {
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        .controls {
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        .controls h3 {
+            margin: 3px 0;
+            color: #ff6;
+        }
+
+        .controls p {
+            margin: 1px 0;
+            color: #ccc;
+        }
+
+        h1 {
+            margin: 5px 0;
+            font-size: 24px;
+        }
+
+        #gameContainer canvas {
+            display: block;
+            margin: 0 auto;
+        }
+
+        body {
+            overflow-x: hidden;
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+
+        #instructions {
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        #instructions p {
+            margin: 2px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚗 Tank Battle Game 🚗</h1>
+
+    <div class="controls">
+        <h3>Controls:</h3>
+        <p><span style="color: #0f0;">Player 1 (Green):</span> Arrow Keys + Spacebar</p>
+        <p><span style="color: #08f;">Player 2 (Blue):</span> WASD + 5</p>
+        <p>Enter: Start/Restart</p>
+    </div>
+
+    <div id="gameInfo">
+        <div>
+            <span style="color: #0f0;">P1:</span> <span id="p1lives">3</span> lives, <span id="p1score">0</span> pts |
+            <span style="color: #08f;">P2:</span> <span id="p2lives">3</span> lives, <span id="p2score">0</span> pts |
+            Level: <span id="level">1</span>
+        </div>
+    </div>
+
+    <div id="gameContainer"></div>
+
+    <div id="instructions">
+        <p>2-Player Tank Battle! Fight enemies and each other!</p>
+        <p>Press ENTER to start the game</p>
+    </div>
+
+    <!-- Load Phaser.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.min.js"></script>
+
+    <!-- Game Script -->
+    <script src="game.js"></script>
+</body>
+</html>
